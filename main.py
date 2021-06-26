@@ -17,11 +17,11 @@ async def cl(ctx,course):
     'Accept': 'application/json, text/javascript, */*; q=0.01',
     'Accept-Encoding': 'gzip, deflate, br',
     'Content-Type': 'application/json, charset=utf-8',
-    '__RequestVerificationToken': 'u5ZIERO6awkVrwKT0RLDuKvi5OKEYmCNl7jnO1WAbL6k2tU0MlAh1LAMHa26RCHdzWzE8XH3PR-E5a0dPELJB3ogm6yS476fZI9Ic8Eu_pc1',
+    '__RequestVerificationToken': '' ## Removed for security Reasons,
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Length': '750',
     'Connection': 'keep-alive',
-    'Cookie': 'AMCV_4D6368F454EC41940A4C98A6%40AdobeOrg=870038026%7CMCIDTS%7C18687%7CMCMID%7C90344209994971932212038851338118089713%7CMCAID%7CNONE%7CMCOPTOUT-1614529868s%7CNONE%7CvVersion%7C5.0.0; amplitude_id_9f6c0bb8b82021496164c672a7dc98d6_edmbergen.edu=eyJkZXZpY2VJZCI6Ijg3ODAxNGI4LTIyMGItNGMyZC04YzE1LTFmNmY0ODI2OWY0OVIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTU5ODgyOTI5NjE4MSwibGFzdEV2ZW50VGltZSI6MTU5ODgyOTk5NzkwOCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MzUsInNlcXVlbmNlTnVtYmVyIjozNX0=; studentselfservice_production_Sso=s8LmHk76Uh4eGwibqN94B/8OHbHRS4c+KH/lOcMhsx1b/5CJRUZelKUnYygMOzkCfT3Y/383QUVI64liGHTJ2YSDGQZD8dhGkbmQ9Lh5WRtVYh7AXoDKW7pJ1djl+RRR; __RequestVerificationToken_L1N0dWRlbnQ1=EzkRXWognkpclON7dY1mfmE-GW2n2ci-WFlGf94Q_VFYLQ6xrcvxjJgKAXNWiyXDUos3tZjxfQrJy0MbPIl72StMFfV55ouq5pMLRzNbj7M1',
+    'Cookie': '', ## Removed for security Reasons
     'Cache-Control': 'max-age=0',
     'TE':'Trailers'
     }
@@ -47,4 +47,4 @@ async def cl(ctx,course):
 # Consider adding ['BuildingDisplay'] and ['RoomDisplay'] (same path as previous comment)
 #TODO add time listing
 
-client.run('ODUyNjk5NzAxMzE2MDI2Mzk5.YMKoew.8Vwfepb-tKHrRKnrPwz6uLd9vaM')
+client.run('Token') ## Removed for security Reasons just replace with your own token to get it working
