@@ -38,7 +38,6 @@ async def cl(ctx,course):
             template['section']=listing['TermsAndSections'][i]['Sections'][j]['Section']['SectionNameDisplay']
             template['seats']=listing['TermsAndSections'][i]['Sections'][j]['Section']['Available']
             template['location']=listing['TermsAndSections'][i]['Sections'][j]['Section']['LocationDisplay']
-            template=listing['TermsAndSections'][i]['Sections'][j]['Section']['FormattedMeetingTimes']
             embed.add_field(name=template['section'],value='**Professor:** '+template['faculty']+'\n'+
             '**Seats Left: **'+str(template['seats'])+'\n'+'**Location: **'+template['location']+'\n')
         await ctx.send(embed=embed)
