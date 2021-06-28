@@ -32,18 +32,19 @@ async def cl(ctx,course):
     embed=Embed(title=listing['Course']['SubjectCode']+' '+ listing['Course']['Number'] ,description=listing['Course']['Title']+'\n'+listing['Course']['Description'])
     await ctx.send(embed=embed)
     for i in range(len(listing['TermsAndSections'])):
-        embed=Embed(title=listing['TermsAndSections'][i]['Term']['Description'],description='')
+        embed=Embed(title=listing['TermsAndSections'][i]['Term']['Description'],description='',colour=discord.Colour.dark_purple())
         for j in range(len(listing['TermsAndSections'][i]['Sections'])):
+            message='**Times:**\n'
             template['faculty']=listing['TermsAndSections'][i]['Sections'][j]['FacultyDisplay']
             template['section']=listing['TermsAndSections'][i]['Sections'][j]['Section']['SectionNameDisplay']
             template['seats']=listing['TermsAndSections'][i]['Sections'][j]['Section']['Available']
             template['location']=listing['TermsAndSections'][i]['Sections'][j]['Section']['LocationDisplay']
+            temp=listing['TermsAndSections'][i]['Sections'][j]['Section']['FormattedMeetingTimes']
+            for k in range(len(temp)):
+                message=message+' '+temp[k]['DaysOfWeekDisplay']+' '+temp[k]['StartTimeDisplay']+'-'+temp[k]['EndTimeDisplay'] +'\n'
             embed.add_field(name=template['section'],value='**Professor:** '+template['faculty']+'\n'+
-            '**Seats Left: **'+str(template['seats'])+'\n'+'**Location: **'+template['location']+'\n')
+            '**Seats Left: **'+str(template['seats'])+'\n'+'**Location: **'+template['location']+'\n'+message)
         await ctx.send(embed=embed)
-
-# Course Time: listing['TermsAndSections'][i]['Sections'][j]['Section']['FormattedMeetingTimes'][k] after that you need ['DaysOfWeekDisplay'][j] and ['StartTimeDisplay'] and ['EndTimeDisplay']
 # Consider adding ['BuildingDisplay'] and ['RoomDisplay'] (same path as previous comment)
-#TODO add time listing
 
 client.run('Token') ## Removed for security Reasons just replace with your own token to get it working
